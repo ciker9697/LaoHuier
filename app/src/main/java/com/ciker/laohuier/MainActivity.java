@@ -1,16 +1,21 @@
 package com.ciker.laohuier;
 
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +25,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         ViewPager.OnPageChangeListener {
 
     //UI Objects
-    private TextView txt_topbar;
+//    private TextView txt_topbar;
     private RadioGroup rg_tab_bar;
     private RadioButton rb_channel;
     private RadioButton rb_message;
+    private Toolbar toolbar;
     private ViewPager vpager;
 
     private MyFragmentPagerAdapter mAdapter;
@@ -38,14 +44,39 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_main);
         mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         bindViews();
+        setSupportActionBar(toolbar);
         rb_channel.setChecked(true);
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                break;
+            case R.id.backup:
+                Toast.makeText(this,"backup",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.delete:
+                Toast.makeText(this,"delete",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.settings:
+                Toast.makeText(this,"settings",Toast.LENGTH_SHORT).show();
+                break;
+            default:
+        }
+        return true;
     }
 
     private void bindViews() {
-        txt_topbar = (TextView) findViewById(R.id.txt_topbar);
+//        txt_topbar = (TextView) findViewById(R.id.txt_topbar);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_channel = (RadioButton) findViewById(R.id.laohuier_page);
         rb_message = (RadioButton) findViewById(R.id.contact_page);
+        toolbar = findViewById(R.id.toolbar);
         rg_tab_bar.setOnCheckedChangeListener(this);
         vpager = (ViewPager) findViewById(R.id.vpager);
         vpager.setAdapter(mAdapter);

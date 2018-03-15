@@ -36,5 +36,5 @@
     <ImageView
         android:background="#d9d3d3"
         android:layout_width="match_parent"
-        android:layout_height="1dp" />
+        android:layout_height="1dp" />//分割线
 </LinearLayout>

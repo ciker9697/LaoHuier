@@ -14,29 +14,39 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <RelativeLayout
-            android:id="@+id/ly_top_bar"
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/ly_top_bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:background="#2b2a2a">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/txt_topbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:gravity="center"-->
+                <!--android:text="唠会儿"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="18sp" />-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2px"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="#cc3737" />-->
+
+        <!--</RelativeLayout>-->
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="#2b2a2a">
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar"
+            android:background="#454343"
+            android:gravity="left"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            />
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
 
-            <TextView
-                android:id="@+id/txt_topbar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="唠会儿"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2px"
-                android:layout_alignParentBottom="true"
-                android:background="#cc3737" />
-
-        </RelativeLayout>
 
 
         <RadioGroup
@@ -73,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/div_tab_bar"
-            android:layout_below="@id/ly_top_bar" />
+            android:layout_below="@id/toolbar" />
 
 
     </RelativeLayout>
