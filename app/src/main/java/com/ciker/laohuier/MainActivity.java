@@ -57,14 +57,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         switch (item.getItemId()){
             case android.R.id.home:
                 break;
-            case R.id.backup:
-                Toast.makeText(this,"backup",Toast.LENGTH_SHORT).show();
+            case R.id.search:
+                Toast.makeText(this,"search",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.delete:
-                Toast.makeText(this,"delete",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.settings:
-                Toast.makeText(this,"settings",Toast.LENGTH_SHORT).show();
+            case R.id.add:
+                Toast.makeText(this,"add",Toast.LENGTH_SHORT).show();
                 break;
             default:
         }
