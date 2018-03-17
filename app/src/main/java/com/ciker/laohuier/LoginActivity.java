@@ -114,18 +114,19 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener{
                 goToRegister();
                 break;
             case R.id.sign_in_button:
-//                if(isRegisteredUser(account)&&checkAccount(account)){
-//                    progressBar.setVisibility(View.VISIBLE);
-//                    Intent intent = new Intent(this,MainActivity.class);
-//                    Toast.makeText(this,"欢迎您"+ user.getName()+"登录",Toast.LENGTH_SHORT).show();
-//                    startActivity(intent);
-//                    progressBar.setVisibility(View.INVISIBLE);
-//                }else {
-//                    builder.show();
-//                }
-                Intent intent = new Intent(this,MainActivity.class);
-                startActivity(intent);
-                break;
+                if(isRegisteredUser(account)&&checkAccount(account)){
+                    progressBar.setVisibility(View.VISIBLE);
+                    Intent intent = new Intent(this,MainActivity.class);
+                    Toast.makeText(this,"欢迎您"+ user.getName()+"登录",Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    progressBar.setVisibility(View.INVISIBLE);
+                    finish();
+                }else {
+                    builder.show();
+                }
+//                Intent intent = new Intent(this,MainActivity.class);
+//                startActivity(intent);
+//                break;
             default:break;
         }
     }

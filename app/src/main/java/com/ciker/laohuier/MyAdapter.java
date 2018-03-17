@@ -1,5 +1,6 @@
 package com.ciker.laohuier;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(),"进入聊天",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(),ChatActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
         return holder;
